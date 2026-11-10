@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int reverse_number_iterative(int x);
+int reverse_number_recursive(int x, int rev);
 
 int main(void)
 {
@@ -11,6 +12,12 @@ int main(void)
     int reversed = reverse_number_iterative(-251);
 
     printf("Original: %d\nReversed: %d\n", original, reversed);
+
+    int rev = 0;
+
+    int result = reverse_number_recursive(original, rev);
+
+    printf("Original: %d\nReversed: %d\n", original, result);
 
     return 0;
 }
@@ -33,4 +40,14 @@ int reverse_number_iterative(int x)
     }
 
     return reversed;
+}
+
+int reverse_number_recursive(int x, int rev)
+{
+    if (x == 0)
+    {
+        return rev;
+    }
+
+    return reverse_number_recursive(x / 10, rev * 10 + x % 10);
 }
