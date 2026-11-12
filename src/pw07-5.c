@@ -7,17 +7,23 @@ int main(void)
 {
     // 22
 
-    int original = -251;
+    int original, rev, rev_iterative, rev_recursive;
 
-    int reversed = reverse_number_iterative(-251);
+    original = 0;
+    rev = 0;
+    rev_iterative = 0;
+    rev_recursive = 0;
 
-    printf("Original: %d\nReversed: %d\n", original, reversed);
+    if (scanf("%d", &original) != 1)
+        return -1;
 
-    int rev = 0;
+    rev_iterative = reverse_number_iterative(original);
 
-    int result = reverse_number_recursive(original, rev);
+    printf("Original: %d\nReversed: %d\n", original, rev_iterative);
 
-    printf("Original: %d\nReversed: %d\n", original, result);
+    rev_recursive = reverse_number_recursive(original, rev);
+
+    printf("Original: %d\nReversed: %d\n", original, rev_recursive);
 
     return 0;
 }

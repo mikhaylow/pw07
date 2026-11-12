@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void calc(int *a, int *b);
+void my_remainder(int *a, int *b);
 
 int main(void)
 {
@@ -21,14 +21,14 @@ int main(void)
 
     printf("Pointer a: %d\nPointer b: %d\n", *p_a, *p_b);
 
-    calc(p_a, p_b);
+    my_remainder(p_a, p_b);
 
     printf("Pointer a: %d\nPointer b: %d\n", *p_a, *p_b);
 
     return 0;
 }
 
-void calc(int *a, int *b)
+void my_remainder(int *a, int *b)
 {
     int result = 0;
 
